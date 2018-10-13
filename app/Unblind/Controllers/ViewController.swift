@@ -80,7 +80,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func screenTapped(_ sender: Any) {
-        print("image view tapped")
         if inputValid {
             if !processing {
                 print("processing")
@@ -105,6 +104,7 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
             let image = UIImage(data: imageData)
             ImageService.getText(image: image!) { blocks in
                 for block in blocks {
+                    print(block.text)
                     SpeechService.say(string: block.text)
                 }
                 self.processing = false
