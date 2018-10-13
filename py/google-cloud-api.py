@@ -35,7 +35,7 @@ client = vision.ImageAnnotatorClient()
 # Change the filename when using here
 file_name = os.path.join(
     os.path.dirname(__file__),
-    'crowd.jpg')
+    'w.jpg')
 
 # Loads the image into memory
 with io.open(file_name, 'rb') as image_file:
