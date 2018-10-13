@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F72A318A21718E1900E43DAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F72A318921718E1900E43DAD /* GoogleService-Info.plist */; };
 		F7D387902171727400D7BFE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D3878F2171727400D7BFE5 /* AppDelegate.swift */; };
 		F7D387922171727400D7BFE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D387912171727400D7BFE5 /* ViewController.swift */; };
 		F7D387952171727400D7BFE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D387932171727400D7BFE5 /* Main.storyboard */; };
 		F7D387972171727500D7BFE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D387962171727500D7BFE5 /* Assets.xcassets */; };
 		F7D3879A2171727500D7BFE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D387982171727500D7BFE5 /* LaunchScreen.storyboard */; };
+		FBF51E1AF42388713490CDB9 /* Pods_Unblind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20942EBB585651EA74C5C40 /* Pods_Unblind.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE76F201024A6650DD07FFBD /* Pods-Unblind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unblind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unblind/Pods-Unblind.debug.xcconfig"; sourceTree = "<group>"; };
+		AEF7F3002D3DFC73D2FE8F9A /* Pods-Unblind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unblind.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unblind/Pods-Unblind.release.xcconfig"; sourceTree = "<group>"; };
+		D20942EBB585651EA74C5C40 /* Pods_Unblind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unblind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F72A318921718E1900E43DAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7D3878C2171727400D7BFE5 /* Unblind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unblind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D3878F2171727400D7BFE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7D387912171727400D7BFE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBF51E1AF42388713490CDB9 /* Pods_Unblind.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BB961466282AE6358BCAF7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE76F201024A6650DD07FFBD /* Pods-Unblind.debug.xcconfig */,
+				AEF7F3002D3DFC73D2FE8F9A /* Pods-Unblind.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		56AA7251D759F634938FEAB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D20942EBB585651EA74C5C40 /* Pods_Unblind.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7D387832171727400D7BFE5 = {
 			isa = PBXGroup;
 			children = (
 				F7D3878E2171727400D7BFE5 /* Unblind */,
 				F7D3878D2171727400D7BFE5 /* Products */,
+				1BB961466282AE6358BCAF7B /* Pods */,
+				56AA7251D759F634938FEAB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +93,7 @@
 				F7D3878F2171727400D7BFE5 /* AppDelegate.swift */,
 				F7D387962171727500D7BFE5 /* Assets.xcassets */,
 				F7D3879B2171727500D7BFE5 /* Info.plist */,
+				F72A318921718E1900E43DAD /* GoogleService-Info.plist */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -95,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7D3879E2171727500D7BFE5 /* Build configuration list for PBXNativeTarget "Unblind" */;
 			buildPhases = (
+				3100D5CD799D2EFB55BDC569 /* [CP] Check Pods Manifest.lock */,
 				F7D387882171727400D7BFE5 /* Sources */,
 				F7D387892171727400D7BFE5 /* Frameworks */,
 				F7D3878A2171727400D7BFE5 /* Resources */,
+				43EEC2A1489F69238DF1105B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,12 +176,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7D3879A2171727500D7BFE5 /* LaunchScreen.storyboard in Resources */,
+				F72A318A21718E1900E43DAD /* GoogleService-Info.plist in Resources */,
 				F7D387972171727500D7BFE5 /* Assets.xcassets in Resources */,
 				F7D387952171727400D7BFE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3100D5CD799D2EFB55BDC569 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Unblind-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		43EEC2A1489F69238DF1105B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Unblind/Pods-Unblind-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unblind/Pods-Unblind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7D387882171727400D7BFE5 /* Sources */ = {
@@ -304,11 +375,12 @@
 		};
 		F7D3879F2171727500D7BFE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE76F201024A6650DD07FFBD /* Pods-Unblind.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RB42Y8C7YL;
-				INFOPLIST_FILE = Unblind/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Unblind/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,11 +394,12 @@
 		};
 		F7D387A02171727500D7BFE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AEF7F3002D3DFC73D2FE8F9A /* Pods-Unblind.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RB42Y8C7YL;
-				INFOPLIST_FILE = Unblind/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Unblind/Supporting/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
