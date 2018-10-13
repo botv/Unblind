@@ -1,8 +1,5 @@
 from pprint import pprint
-
-
 def locational_summary(objects):
-
     strings = []
     vertex_list = []
     for obj in objects:
@@ -13,10 +10,10 @@ def locational_summary(objects):
         max_x = max(vertex_list, key=lambda t: t[0])[0]
         min_y = min(vertex_list, key=lambda t: t[1])[1]
         max_y = max(vertex_list, key=lambda t: t[1])[1]
-        pprint('Min_x:'+str(min_x))
-        pprint('Max_x:'+str(max_x))
-        pprint('Min_y:'+str(min_y))
-        pprint('Max_y:'+str(max_y))
+        #pprint('Min_x:'+str(min_x))
+        #pprint('Max_x:'+str(max_x))
+        #pprint('Min_y:'+str(min_y))
+        #pprint('Max_y:'+str(max_y))
 
         center_x = (max_x + min_x) / 2
         center_y = (max_y + min_y) / 2

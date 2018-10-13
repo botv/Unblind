@@ -5,7 +5,7 @@ import sys
 from google.cloud import vision
 from google.cloud.vision import types
 from loc_summary import locational_summary
-
+from exec_summary import exec_summary
 
 def localize_objects(path):
     """Localize objects in the local image.
@@ -22,14 +22,13 @@ def localize_objects(path):
 
     objects = client.object_localization(
         image=image).localized_object_annotations
-
+    locational_summary(objects)
     # print('Number of objects found: {}'.format(len(objects)))
-    for object_ in objects:
+    #for object_ in objects:
         # print('\n{} (confidence: {})'.format(object_.name, object_.score))
         # print('Normalized bounding polygon vertices: ')
-        for vertex in object_.bounding_poly.normalized_vertices:
-            print(' - ({}, {})'.format(vertex.x, vertex.y))
-    locational_summary(objects)
+        #for vertex in object_.bounding_poly.normalized_vertices:
+            #print(' - ({}, {})'.format(vertex.x, vertex.y))
 
 # Instantiates a client
 client = vision.ImageAnnotatorClient()
@@ -38,7 +37,7 @@ client = vision.ImageAnnotatorClient()
 # Change the filename when using here
 file_name = os.path.join(
     os.path.dirname(__file__),
-    'test6b.png')
+    'w.jpg')
 
 # Loads the image into memory
 with io.open(file_name, 'rb') as image_file:
@@ -50,7 +49,8 @@ image = types.Image(content=content)
 response = client.label_detection(image=image)
 labels = response.label_annotations
 
-print('Labels:')
-for label in labels:
-    print(label.description)
+#print('Labels:')
+#for label in labels:
+#    print(label.description)
+print(exec_summary(labels))
 localize_objects(file_name)
