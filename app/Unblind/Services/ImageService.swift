@@ -10,39 +10,17 @@ import UIKit
 import Firebase
 
 struct ImageService {
-    static func getText(image: UIImage, completion: @escaping (String?) -> Void) {
+    static func getText(image: UIImage, completion: @escaping ([VisionTextBlock]) -> Void) {
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
         let visionImage = VisionImage(image: image)
         
         textRecognizer.process(visionImage) { result, error in
             guard error == nil, let result = result else {
-                return completion(nil)
+                return completion([])
             }
 
-            let resultText = result.text
-            completion(resultText)
-//            for block in result.blocks {
-//                let blockText = block.text
-//                let blockConfidence = block.confidence
-//                let blockLanguages = block.recognizedLanguages
-//                let blockCornerPoints = block.cornerPoints
-//                let blockFrame = block.frame
-//                for line in block.lines {
-//                    let lineText = line.text
-//                    let lineConfidence = line.confidence
-//                    let lineLanguages = line.recognizedLanguages
-//                    let lineCornerPoints = line.cornerPoints
-//                    let lineFrame = line.frame
-//                    for element in line.elements {
-//                        let elementText = element.text
-//                        let elementConfidence = element.confidence
-//                        let elementLanguages = element.recognizedLanguages
-//                        let elementCornerPoints = element.cornerPoints
-//                        let elementFrame = element.frame
-//                    }
-//                }
-//            }
+            completion(result.blocks)
         }
     }
 }

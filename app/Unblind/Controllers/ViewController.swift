@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
@@ -102,10 +103,9 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             let image = UIImage(data: imageData)
-            ImageService.getText(image: image!) { text in
-                if let text = text {
-                    print("\n" + text + "\n")
-                    SpeechService.say(string: text)
+            ImageService.getText(image: image!) { blocks in
+                for block in blocks {
+                    SpeechService.say(string: block.text)
                 }
                 self.processing = false
                 self.spinner.stopAnimating()
