@@ -4,7 +4,8 @@ const ImageService = require('../services/ImageService');
 const router = express.Router();
 
 router.get('/describe', function (req, res, next) {
-	const uri = req.query.uri;
+	const uri = decodeURIComponent(req.query.uri);
+
 	ImageService.describe(uri, function (description) {
 		if (description != null) {
 			res.send(description);

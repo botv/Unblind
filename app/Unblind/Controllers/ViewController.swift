@@ -109,6 +109,12 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
                 self.processing = false
                 self.spinner.stopAnimating()
             }
+            
+            ImageService.getDescription(image: image!) { description in
+                if let description = description {
+                    print(description)
+                }
+            }
         } else {
             self.processing = false
             self.spinner.stopAnimating()

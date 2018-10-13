@@ -11,6 +11,7 @@
 		F72A318A21718E1900E43DAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F72A318921718E1900E43DAD /* GoogleService-Info.plist */; };
 		F772B7A12171C2E5007D35A5 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772B7A02171C2E5007D35A5 /* SpeechService.swift */; };
 		F78406AD2172861900835DA9 /* TextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78406AC2172861900835DA9 /* TextService.swift */; };
+		F7BFB17C21728F5800D41231 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BFB17B21728F5800D41231 /* StorageService.swift */; };
 		F7D387902171727400D7BFE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D3878F2171727400D7BFE5 /* AppDelegate.swift */; };
 		F7D387922171727400D7BFE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D387912171727400D7BFE5 /* ViewController.swift */; };
 		F7D387952171727400D7BFE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D387932171727400D7BFE5 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		F72A318921718E1900E43DAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F772B7A02171C2E5007D35A5 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		F78406AC2172861900835DA9 /* TextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextService.swift; sourceTree = "<group>"; };
+		F7BFB17B21728F5800D41231 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		F7D3878C2171727400D7BFE5 /* Unblind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unblind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D3878F2171727400D7BFE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7D387912171727400D7BFE5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				F709921E217191F0004C3C82 /* ImageService.swift */,
+				F7BFB17B21728F5800D41231 /* StorageService.swift */,
 				F772B7A02171C2E5007D35A5 /* SpeechService.swift */,
 				F78406AC2172861900835DA9 /* TextService.swift */,
 			);
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7D387922171727400D7BFE5 /* ViewController.swift in Sources */,
+				F7BFB17C21728F5800D41231 /* StorageService.swift in Sources */,
 				F7D387902171727400D7BFE5 /* AppDelegate.swift in Sources */,
 				F709921F217191F0004C3C82 /* ImageService.swift in Sources */,
 				F78406AD2172861900835DA9 /* TextService.swift in Sources */,
