@@ -104,6 +104,7 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
             let image = UIImage(data: imageData)
             ImageService.getText(image: image!) { blocks in
                 for block in blocks {
+                    print("\(block.frame.size.width)x\(block.frame.size.height)")
                     print(block.text)
                     SpeechService.say(string: block.text)
                 }

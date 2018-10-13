@@ -23,4 +23,8 @@ struct ImageService {
             completion(result.blocks)
         }
     }
+    
+    static func getLabels(image: UIImage, completion: @escaping ([VisionLabel]) -> Void) {
+        
+    }
 }

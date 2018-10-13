@@ -6,6 +6,8 @@ process.on('uncaughtException', function (err) {
 });
 
 const indexRouter = require('./routes/index');
+const textRouter = require('./routes/text');
+const imageRouter = require('./routes/image');
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 app.use('/', indexRouter);
+app.use('/text/', textRouter);
+app.use('/image/', imageRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
