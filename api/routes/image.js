@@ -5,12 +5,12 @@ const router = express.Router();
 
 router.get('/describe', function (req, res, next) {
 	const uri = req.query.uri;
-	ImageService.describe(uri, function(description) {
+	ImageService.describe(uri, function (description) {
 		if (description != null) {
-			res.send(description)
+			res.send(description);
 		} else {
 			res.status(500);
-			res.end()
+			res.end();
 		}
 	});
 });

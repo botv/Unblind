@@ -10,21 +10,23 @@ import UIKit
 import Firebase
 
 struct ImageService {
-    static func getText(image: UIImage, completion: @escaping ([VisionTextBlock]) -> Void) {
+    static func getText(image: UIImage, completion: @escaping (String?) -> Void) {
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
         let visionImage = VisionImage(image: image)
         
         textRecognizer.process(visionImage) { result, error in
             guard error == nil, let result = result else {
-                return completion([])
+                return completion(nil)
             }
-
-            completion(result.blocks)
+            
+            TextService.cleanupRemote(text: result.text) { text in
+                completion(text)
+            }
         }
     }
     
-    static func getLabels(image: UIImage, completion: @escaping ([VisionLabel]) -> Void) {
-        
+    static func getDescription(image: UIImage, completion: @escaping ([VisionLabel]) -> Void) {
+
     }
 }

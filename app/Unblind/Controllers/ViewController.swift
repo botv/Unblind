@@ -82,7 +82,7 @@ class ViewController: UIViewController {
     @IBAction func screenTapped(_ sender: Any) {
         if inputValid {
             if !processing {
-                print("processing")
+                print("processing...")
                 self.processing = true;
                 self.spinner.startAnimating()
                 let settings = AVCapturePhotoSettings()
@@ -102,11 +102,9 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             let image = UIImage(data: imageData)
-            ImageService.getText(image: image!) { blocks in
-                for block in blocks {
-                    print("\(block.frame.size.width)x\(block.frame.size.height)")
-                    print(block.text)
-                    SpeechService.say(string: block.text)
+            ImageService.getText(image: image!) { text in
+                if let text = text {
+                    print(text)
                 }
                 self.processing = false
                 self.spinner.stopAnimating()
