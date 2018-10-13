@@ -1,7 +1,6 @@
 import io
 import os
 import sys
-
 # Imports the Google Cloud client library
 from google.cloud import vision
 from google.cloud.vision import types
@@ -29,8 +28,7 @@ def localize_objects(path):
         # print('\n{} (confidence: {})'.format(object_.name, object_.score))
         # print('Normalized bounding polygon vertices: ')
         for vertex in object_.bounding_poly.normalized_vertices:
-            # print(' - ({}, {})'.format(vertex.x, vertex.y))
-
+            print(' - ({}, {})'.format(vertex.x, vertex.y))
     locational_summary(objects)
 
 # Instantiates a client
@@ -40,7 +38,7 @@ client = vision.ImageAnnotatorClient()
 # Change the filename when using here
 file_name = os.path.join(
     os.path.dirname(__file__),
-    'w.jpg')
+    'test6b.png')
 
 # Loads the image into memory
 with io.open(file_name, 'rb') as image_file:
@@ -55,5 +53,4 @@ labels = response.label_annotations
 print('Labels:')
 for label in labels:
     print(label.description)
-
 localize_objects(file_name)

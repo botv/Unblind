@@ -1,4 +1,4 @@
-# from pprint import pprint
+from pprint import pprint
 
 
 def locational_summary(objects):
@@ -13,25 +13,25 @@ def locational_summary(objects):
         max_x = max(vertex_list, key=lambda t: t[0])[0]
         min_y = min(vertex_list, key=lambda t: t[1])[1]
         max_y = max(vertex_list, key=lambda t: t[1])[1]
-        # pprint('Min_x:'+str(min_x))
-        # pprint('Max_x:'+str(max_x))
-        # pprint('Min_y:'+str(min_y))
-        # pprint('Max_y:'+str(max_y))
+        pprint('Min_x:'+str(min_x))
+        pprint('Max_x:'+str(max_x))
+        pprint('Min_y:'+str(min_y))
+        pprint('Max_y:'+str(max_y))
 
         center_x = (max_x + min_x) / 2
         center_y = (max_y + min_y) / 2
 
         x_str = ''
-        if center_x > 0.666:
+        if center_x > 0.75:
             x_str += ' to your right'
-        elif center_x < 0.333:
+        elif center_x < 0.25:
             x_str += ' to your left'
 
         y_str = ''
 
-        if center_y < 0.333:
+        if center_y < 0.25:
             y_str += ' above you.'
-        elif center_y < 0.666:
+        elif center_y < 0.75:
             y_str += ' directly in front of you.'
         else:
             y_str += ' below you.'
