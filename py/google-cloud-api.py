@@ -1,10 +1,12 @@
 import io
 import os
+import sys
 
 # Imports the Google Cloud client library
 from google.cloud import vision
 from google.cloud.vision import types
 from loc_summary import locational_summary
+
 
 def localize_objects(path):
     """Localize objects in the local image.
@@ -22,12 +24,12 @@ def localize_objects(path):
     objects = client.object_localization(
         image=image).localized_object_annotations
 
-    print('Number of objects found: {}'.format(len(objects)))
+    # print('Number of objects found: {}'.format(len(objects)))
     for object_ in objects:
-        print('\n{} (confidence: {})'.format(object_.name, object_.score))
-        print('Normalized bounding polygon vertices: ')
+        # print('\n{} (confidence: {})'.format(object_.name, object_.score))
+        # print('Normalized bounding polygon vertices: ')
         for vertex in object_.bounding_poly.normalized_vertices:
-            print(' - ({}, {})'.format(vertex.x, vertex.y))
+            # print(' - ({}, {})'.format(vertex.x, vertex.y))
 
     locational_summary(objects)
 
