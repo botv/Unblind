@@ -8,7 +8,7 @@ module.exports = class TextService {
 			scriptPath: 'lib'
 		};
 
-		PythonShell.run('text_cleanup.py', options, function (err, results) {
+		PythonShell.run('cleanup_text.py', options, function (err, results) {
 			if (err) callback(null);
 			console.log('results: %j', results);
 			callback(results);

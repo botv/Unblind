@@ -9,6 +9,7 @@ target 'Unblind' do
   pod 'Firebase/Core'
   pod 'Firebase/MLVision'
   pod 'Firebase/MLVisionTextModel'
+  pod 'Firebase/Storage'
   pod 'Alamofire'
   pod 'SwiftyJSON'
 

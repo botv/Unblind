@@ -11,6 +11,9 @@ PODS:
   - Firebase/MLVisionTextModel (5.6.0):
     - Firebase/CoreOnly
     - FirebaseMLVisionTextModel (= 0.11.0)
+  - Firebase/Storage (5.6.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (= 3.0.0)
   - FirebaseAnalytics (5.1.1):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -35,6 +38,9 @@ PODS:
     - GoogleMobileVision/Detector (~> 1.3)
   - FirebaseMLVisionTextModel (0.11.0):
     - GoogleMobileVision/TextDetector (~> 1.3)
+  - FirebaseStorage (3.0.0):
+    - FirebaseCore (~> 5.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleAPIClientForREST/Core (1.3.6):
     - GTMSessionFetcher (>= 1.1.7)
   - GoogleAPIClientForREST/Vision (1.3.6):
@@ -92,6 +98,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/MLVision
   - Firebase/MLVisionTextModel
+  - Firebase/Storage
   - SwiftyJSON
 
 SPEC REPOS:
@@ -104,6 +111,7 @@ SPEC REPOS:
     - FirebaseMLCommon
     - FirebaseMLVision
     - FirebaseMLVisionTextModel
+    - FirebaseStorage
     - GoogleAPIClientForREST
     - GoogleAppMeasurement
     - GoogleMobileVision
@@ -123,6 +131,7 @@ SPEC CHECKSUMS:
   FirebaseMLCommon: 285b93416df5f37164ad08795cb799f253fda549
   FirebaseMLVision: b2a14ec0d0d885b6b0d0c04825794715cb755c3e
   FirebaseMLVisionTextModel: 52a42f7d723e3d2d7d68ca8269722c9b36cd4892
+  FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleAPIClientForREST: 5b95b38a0fa912e8ac7bdcf9e124578ef1a61bf2
   GoogleAppMeasurement: f7507b39b70ad0bd80b3d81518b2f43868974307
   GoogleMobileVision: bedef12c0924e948fc09b8f1b38c5fe1a3594b6f
@@ -133,6 +142,6 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 434bf3f0c8b76c905ebb7d995f5c10dc39c4d96d
+PODFILE CHECKSUM: a2e0577f84d9d3dd1ea1d7d2b5e5a2df2f67a587
 
 COCOAPODS: 1.5.3
