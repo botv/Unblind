@@ -4,6 +4,7 @@ import os
 # Imports the Google Cloud client library
 from google.cloud import vision
 from google.cloud.vision import types
+from loc_summary import locational_summary
 
 def localize_objects(path):
     """Localize objects in the local image.
@@ -27,6 +28,8 @@ def localize_objects(path):
         print('Normalized bounding polygon vertices: ')
         for vertex in object_.bounding_poly.normalized_vertices:
             print(' - ({}, {})'.format(vertex.x, vertex.y))
+
+    locational_summary(objects)
 
 # Instantiates a client
 client = vision.ImageAnnotatorClient()
