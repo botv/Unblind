@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F709921F217191F0004C3C82 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709921E217191F0004C3C82 /* ImageService.swift */; };
 		F72A318A21718E1900E43DAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F72A318921718E1900E43DAD /* GoogleService-Info.plist */; };
 		F7D387902171727400D7BFE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D3878F2171727400D7BFE5 /* AppDelegate.swift */; };
 		F7D387922171727400D7BFE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D387912171727400D7BFE5 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 		AE76F201024A6650DD07FFBD /* Pods-Unblind.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unblind.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Unblind/Pods-Unblind.debug.xcconfig"; sourceTree = "<group>"; };
 		AEF7F3002D3DFC73D2FE8F9A /* Pods-Unblind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unblind.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unblind/Pods-Unblind.release.xcconfig"; sourceTree = "<group>"; };
 		D20942EBB585651EA74C5C40 /* Pods_Unblind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unblind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F709921E217191F0004C3C82 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		F72A318921718E1900E43DAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7D3878C2171727400D7BFE5 /* Unblind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unblind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7D3878F2171727400D7BFE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F709921D217191DE004C3C82 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F709921E217191F0004C3C82 /* ImageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F7D387832171727400D7BFE5 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		F7D3878E2171727400D7BFE5 /* Unblind */ = {
 			isa = PBXGroup;
 			children = (
+				F709921D217191DE004C3C82 /* Services */,
 				F7D387A12171728600D7BFE5 /* Supporting */,
 				F7D387A3217172A800D7BFE5 /* Controllers */,
 				F7D387A22171728F00D7BFE5 /* Storyboards */,
@@ -127,6 +138,7 @@
 				F7D387892171727400D7BFE5 /* Frameworks */,
 				F7D3878A2171727400D7BFE5 /* Resources */,
 				43EEC2A1489F69238DF1105B /* [CP] Embed Pods Frameworks */,
+				5CAEBAA6D026517641C3E529 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,17 +222,43 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Unblind/Pods-Unblind-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unblind/Pods-Unblind-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5CAEBAA6D026517641C3E529 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Unblind/Pods-Unblind-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Unblind/Pods-Unblind-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -232,6 +270,7 @@
 			files = (
 				F7D387922171727400D7BFE5 /* ViewController.swift in Sources */,
 				F7D387902171727400D7BFE5 /* AppDelegate.swift in Sources */,
+				F709921F217191F0004C3C82 /* ImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

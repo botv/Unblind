@@ -9,12 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var imageView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
-
+    
+    @IBAction func imageViewTapped(_ sender: Any) {
+        print("image view tapped")
+    }
+    
 }
 
