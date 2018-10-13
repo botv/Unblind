@@ -8,7 +8,7 @@ router.get('*', function (req, res, next) {
 		next();
 	} else {
 		res.status(500);
-		res.end()
+		res.end();
 	}
 });
 

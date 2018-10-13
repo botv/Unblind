@@ -10,12 +10,12 @@ module.exports = class ImageService {
 						try {
 							console.log('analyzing image');
 							callback('description');
-							console.log('analysis complete')
+							console.log('analysis complete');
 						} catch (err) {
 							callback(null);
 							console.log('analysis failed');
 						}
-						fs.unlinkSync(imagePath)
+						fs.unlinkSync(imagePath);
 					});
 			} catch (err) {
 				console.log('download failed');
