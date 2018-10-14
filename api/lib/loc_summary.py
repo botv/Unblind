@@ -107,7 +107,6 @@ def print_quantity(objects):
     if count > 1:
         count = 2
     if len(objects) != 0 and list(objects.values())[0] > 1:
-
         count = 2
     return formatted_str, count
 
