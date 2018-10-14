@@ -23,8 +23,8 @@ def localize_objects_uri(uri):
 
     objects = client.object_localization(
         image=image).localized_object_annotations
-    print(len(objects))
-    locational_summary(objects)
+    #print(len(objects))
+    return locational_summary(objects)
 
 def detect_labels_uri(uri):
     """Detects labels in the file located in Google Cloud Storage or on the
@@ -36,8 +36,11 @@ def detect_labels_uri(uri):
 
     response = client.label_detection(image=image)
     labels = response.label_annotations
-    print(exec_summary(labels))
+    #print(exec_summary(labels))
+    return exec_summary(labels)
 
-uri = sys.argv[1]
-detect_labels_uri(uri)
-localize_objects_uri(uri)
+#uri = sys.argv[1]
+#response = ""
+#response = response+detect_labels_uri(uri)+" "
+#response = response+localize_objects_uri(uri)
+#print(response)
