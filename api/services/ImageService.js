@@ -5,12 +5,12 @@ module.exports = class ImageService {
         let options = {
             mode: 'text',
             pythonOptions: ['-u'],
-			pythonPath: 'env/bin/python',
             scriptPath: 'pylib',
             args: [uri]
         };
 
-        PythonShell.run('describe_image.py', options, function (err, results) {
+        PythonShell.run('describe_image.pyc', options, function (err, results) {
+        	console.log(err);
             if (err) callback(null);
             console.log('results: %j', results);
             callback(results);

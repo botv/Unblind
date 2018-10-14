@@ -32,24 +32,22 @@ struct ImageService {
     
     static func getDescription(image: UIImage, completion: @escaping (String?) -> Void) {
         StorageService.uploadImage(image) { uri in
-            if var uri = uri {
-                uri = uri.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-                
+            if let uri = uri {
                 let parameters: Parameters = [
-                    "token": token,
                     "uri": uri
                 ]
                 
-                let url = "https://unblind-219302.appspot.com/image/describe"
+                let headers: HTTPHeaders = [
+                    "Accept": "application/json"
+                ]
+
+                let url = "https://us-central1-unblind-9a7cd.cloudfunctions.net/describe-image"
                 
-                Alamofire.request(url, method: .get, parameters: parameters).responseJSON() { response in
+                Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString() { response in
                     switch response.result {
                     case .success:
-                        if let data = response.data {
-                            let json = try! JSON(data: data)
-                            let result = json[0].string!
-                            completion(result)
-                        }
+                        print(response.value!)
+                        completion(response.value)
                     case .failure(let error):
                         print(error)
                         completion(nil)
@@ -59,6 +57,5 @@ struct ImageService {
                 return completion(nil)
             }
         }
-        
     }
 }
