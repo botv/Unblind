@@ -113,15 +113,17 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
             case "describe":
                 ImageService.getDescription(image: image!) { description in
                     if let description = description {
+                        print(description)
                         SpeechService.say(string: description)
                     }
                     self.processing = false
                     self.spinner.stopAnimating()
                 }
             case "read":
-                ImageService.getText(image: image!) { text in
-                    if let text = text {
-                        SpeechService.say(string: text)
+                ImageService.getText(image: image!) { summary in
+                    if let summary = summary {
+                        print(summary)
+                        SpeechService.say(string: summary)
                     }
                     self.processing = false
                     self.spinner.stopAnimating()
