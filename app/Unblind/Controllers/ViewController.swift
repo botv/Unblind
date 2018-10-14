@@ -105,7 +105,7 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
             
             ImageService.getDescription(image: image!) { description in
                 if let description = description {
-                    print(description)
+                    SpeechService.say(string: description)
                 }
                 self.processing = false
                 self.spinner.stopAnimating()
