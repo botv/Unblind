@@ -4,7 +4,6 @@ import sys
 
 from google.cloud import vision
 from google.cloud.vision import types
-from autocorrect import spell
 
 
 def locational_summary(objects):
@@ -22,13 +21,13 @@ def locational_summary(objects):
 		max_x = max(vertex_list, key=lambda t: t[0])[0]
 		min_y = min(vertex_list, key=lambda t: t[1])[1]
 		max_y = max(vertex_list, key=lambda t: t[1])[1]
-		vertex_list = []
+
 		center_x = (max_x + min_x) / 2
 		center_y = (max_y + min_y) / 2
 
-		if center_x > 0.666:
+		if center_x > 0.600:
 			right.append(obj.name)
-		elif center_x < 0.333:
+		elif center_x < 0.400:
 			left.append(obj.name)
 		elif center_y < 0.25:
 			above.append(obj.name)
@@ -47,11 +46,13 @@ def locational_summary(objects):
 	if len(right) != 0:
 		right_formatted = format_str(right, 'On your right') + ' . '
 	if len(center) != 0:
-		center_formatted = format_str(center, 'Directly in front of you') + ' . '
+		center_formatted = format_str(center, 'In front of you') + ' . '
 	if len(above) != 0:
-		above_formatted = format_str(above, 'Above you') + ' . '
+		above_formatted = format_str(above, 'In front of you')
+	# above_formatted = format_str(above, 'Above you') + ' . '
 	if len(below) != 0:
-		below_formatted = format_str(below, 'Below you') + ' . '
+		above_formatted = format_str(below, 'In front of you')
+	# below_formatted = format_str(below, 'Below you') + ' . '
 
 	strings.append(center_formatted + left_formatted + right_formatted + above_formatted + below_formatted)
 
@@ -141,4 +142,5 @@ def describe_image(request):
 	response = ''
 	response = response + detect_labels_uri(uri) + ' '
 	response = response + localize_objects_uri(uri)
+	print(response)
 	return response
