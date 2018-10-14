@@ -4,53 +4,40 @@ import sys
 # Imports the Google Cloud client library
 from google.cloud import vision
 from google.cloud.vision import types
+
 from loc_summary import locational_summary
 from exec_summary import exec_summary
 
-def localize_objects(path):
-    """Localize objects in the local image.
+
+def localize_objects_uri(uri):
+    """Localize objects in the image on Google Cloud Storage
 
     Args:
-    path: The path to the local file.
+    uri: The path to the file in Google Cloud Storage (gs://...)
     """
     from google.cloud import vision
     client = vision.ImageAnnotatorClient()
 
-    with open(path, 'rb') as image_file:
-        content = image_file.read()
-    image = vision.types.Image(content=content)
+    image = vision.types.Image()
+    image.source.image_uri = uri
 
     objects = client.object_localization(
         image=image).localized_object_annotations
+    print(len(objects))
     locational_summary(objects)
-    # print('Number of objects found: {}'.format(len(objects)))
-    #for object_ in objects:
-        # print('\n{} (confidence: {})'.format(object_.name, object_.score))
-        # print('Normalized bounding polygon vertices: ')
-        #for vertex in object_.bounding_poly.normalized_vertices:
-            #print(' - ({}, {})'.format(vertex.x, vertex.y))
 
-# Instantiates a client
-client = vision.ImageAnnotatorClient()
+def detect_labels_uri(uri):
+    """Detects labels in the file located in Google Cloud Storage or on the
+    Web."""
+    from google.cloud import vision
+    client = vision.ImageAnnotatorClient()
+    image = vision.types.Image()
+    image.source.image_uri = uri
 
-# The name of the image file to annotate
-# Change the filename when using here
-file_name = os.path.join(
-    os.path.dirname(__file__),
-    'w.jpg')
+    response = client.label_detection(image=image)
+    labels = response.label_annotations
+    print(exec_summary(labels))
 
-# Loads the image into memory
-with io.open(file_name, 'rb') as image_file:
-    content = image_file.read()
-
-image = types.Image(content=content)
-
-# Performs label detection on the image file
-response = client.label_detection(image=image)
-labels = response.label_annotations
-
-#print('Labels:')
-#for label in labels:
-#    print(label.description)
-print(exec_summary(labels))
-localize_objects(file_name)
+uri = sys.argv[1]
+detect_labels_uri(uri)
+localize_objects_uri(uri)
