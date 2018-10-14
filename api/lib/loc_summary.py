@@ -64,9 +64,7 @@ def locational_summary(objects):
     final = ''
     for string in strings:
         final += string
-    print(final)
-
-    return None
+    return final
 
 
 def format_str(objects, location):
@@ -96,6 +94,7 @@ def group(objects):
 def print_quantity(objects):
     formatted_str = ''
     count = 0
+
     for k, v in objects.items():
         count += 1
         if v == 1:
@@ -103,6 +102,13 @@ def print_quantity(objects):
         else:
             formatted_str += str(v) + ' ' + p.plural(str(k)) + ', '
         # print(str(v), str(k))
+
+    # Return plural if multiple objects or multiple of first object
+    if count > 1:
+        count = 2
+    if len(objects) != 0 and list(objects.values())[0] > 1:
+
+        count = 2
     return formatted_str, count
 
 
