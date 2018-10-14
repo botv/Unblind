@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var cameraPreviewLayer: AVCaptureVideoPreviewLayer?
     var inputValid = false
     var processing = false
+    var action: String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +79,8 @@ class ViewController: UIViewController {
         captureSession.startRunning()
     }
     
-    @IBAction func screenTapped(_ sender: Any) {
+    @IBAction func topButtonTapped(_ sender: Any) {
+        action = "describe"
         if inputValid {
             if !processing {
                 print("processing...")
@@ -95,6 +97,11 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func bottomButtonTapped(_ sender: Any) {
+        topButtonTapped(sender)
+        action = "read"
+    }
 }
 
 extension ViewController: AVCapturePhotoCaptureDelegate {
@@ -102,10 +109,27 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
         if let imageData = photo.fileDataRepresentation() {
             let image = UIImage(data: imageData)
             
-            ImageService.getDescription(image: image!) { description in
-                if let description = description {
-                    SpeechService.say(string: description)
+            switch action {
+            case "describe":
+                ImageService.getDescription(image: image!) { description in
+                    if let description = description {
+                        SpeechService.say(string: description)
+                    }
+                    self.processing = false
+                    self.spinner.stopAnimating()
                 }
+            case "read":
+                ImageService.getText(image: image!) { text in
+                    if let text = text {
+                        SpeechService.say(string: text)
+                    }
+                    self.processing = false
+                    self.spinner.stopAnimating()
+                }
+            case .none:
+                self.processing = false
+                self.spinner.stopAnimating()
+            case .some(_):
                 self.processing = false
                 self.spinner.stopAnimating()
             }

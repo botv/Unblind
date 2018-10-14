@@ -15,7 +15,7 @@ struct StorageService {
         let bucketPath = "gs://unblind-9a7cd.appspot.com/"
         let data = image.jpegData(compressionQuality: 0.1)!
         let timestamp = ISO8601DateFormatter().string(from: Date())
-        let storageRef = storage.reference().child("\(timestamp).jpg")
+        let storageRef = storage.reference().child("images/\(timestamp).jpg")
         let uploadTask = storageRef.putData(data, metadata: nil)
         
         uploadTask.observe(.success) { snapshot in

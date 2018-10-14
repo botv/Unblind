@@ -9,33 +9,38 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 struct TextService {
-    static let token = "temp"
-    
-    static func cleanup(text: String, completion: @escaping (String) -> Void) {
-        completion(text)
-    }
-    
-    static func cleanupRemote(text: String, completion: @escaping (String) -> Void) {
+    static func summarizeText(blocks: [VisionTextBlock], completion: @escaping (String?) -> Void) {
+        var blockInfoArray: [[String: Any]] = []
+        
+        for block in blocks {
+            blockInfoArray.append([
+                "text": block.text,
+                "width": block.frame.size.width,
+                "height": block.frame.size.height
+            ])
+        }
+        
         let parameters: Parameters = [
-            "token": token,
-            "text": "hi"
+            "blocks": blockInfoArray
         ]
         
-        let url = "https://unblind-219302.appspot.com/text/cleanup"
+        let headers: HTTPHeaders = [
+            "Accept": "application/json"
+        ]
         
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON() { response in
+        let url = "https://us-central1-unblind-9a7cd.cloudfunctions.net/summarize-text"
+        
+        Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString() { response in
             switch response.result {
             case .success:
-                if let data = response.data {
-                    let json = try! JSON(data: data)
-                    let result = json[0].string!
-                    completion(result)
-                }
+                print(response.value!)
+                completion(response.value)
             case .failure(let error):
                 print(error)
-                completion(text)
+                completion(nil)
             }
         }
     }

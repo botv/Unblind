@@ -12,8 +12,6 @@ import Alamofire
 import SwiftyJSON
 
 struct ImageService {
-    static let token = "temp"
-    
     static func getText(image: UIImage, completion: @escaping (String?) -> Void) {
         let vision = Vision.vision()
         let textRecognizer = vision.onDeviceTextRecognizer()
@@ -24,7 +22,7 @@ struct ImageService {
                 return completion(nil)
             }
             
-            TextService.cleanupRemote(text: result.text) { text in
+            TextService.summarizeText(blocks: result.blocks) { text in
                 completion(text)
             }
         }

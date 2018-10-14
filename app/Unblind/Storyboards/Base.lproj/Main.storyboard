@@ -20,28 +20,44 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="b7J-qQ-2dx" userLabel="Spinner">
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c8h-ch-PMJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLI-el-zC3">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
+                                        <connections>
+                                            <action selector="topButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vrz-5d-Tv7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6W3-f8-W4m">
+                                        <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
+                                        <connections>
+                                            <action selector="bottomButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BwC-Ct-yjZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6W3-f8-W4m" firstAttribute="height" secondItem="mLI-el-zC3" secondAttribute="height" id="aGD-yI-pql"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="c8h-ch-PMJ" secondAttribute="trailing" id="4yc-lf-EH0"/>
+                            <constraint firstItem="c8h-ch-PMJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Eb6-Du-9rR"/>
                             <constraint firstItem="b7J-qQ-2dx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IEQ-Vt-0aD"/>
+                            <constraint firstItem="c8h-ch-PMJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KRn-9t-PnF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="c8h-ch-PMJ" secondAttribute="bottom" id="eKu-AA-gXF"/>
                             <constraint firstItem="b7J-qQ-2dx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xCQ-8g-B17"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="kVf-Xx-Gob" appends="YES" id="rDr-PL-dql"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="spinner" destination="b7J-qQ-2dx" id="EkW-QZ-igT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="kVf-Xx-Gob">
-                    <connections>
-                        <action selector="screenTapped:" destination="BYZ-38-t0r" id="kmA-G5-a3W"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
