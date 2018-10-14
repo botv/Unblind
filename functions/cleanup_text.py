@@ -1,10 +1,9 @@
 import json
 import os
-# from pattern.en import spelling
+
 from autocorrect import spell
 
 
-# input should be in json format
 def sort_string(texts):
 	top_3 = []
 	output = {}
@@ -17,7 +16,6 @@ def sort_string(texts):
 
 	count = 0
 	while count < 3 | count < len(sorted_output):
-		# print(sorted_output[count])
 		top_3.append(sorted_output[count])
 		count = count + 1
 
@@ -25,7 +23,6 @@ def sort_string(texts):
 
 
 def spell_check(top_3):
-	# new_strs = ['helo mi n4me i5 b0b the buildr']
 	new_strs = []
 	new_str = ''
 	for str in top_3:

@@ -4,6 +4,7 @@ import sys
 
 from google.cloud import vision
 from google.cloud.vision import types
+from autocorrect import spell
 
 
 def locational_summary(objects):
