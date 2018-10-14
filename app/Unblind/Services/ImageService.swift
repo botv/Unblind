@@ -34,7 +34,6 @@ struct ImageService {
         StorageService.uploadImage(image) { uri in
             if var uri = uri {
                 uri = uri.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
-                print(uri)
                 
                 let parameters: Parameters = [
                     "token": token,
