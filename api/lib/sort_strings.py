@@ -20,6 +20,9 @@ def sort_string(texts):
         top_3.append(sorted_output[count])
     	count = count + 1
 
+    return top_3
+    
+
 def spell_check(top_3):
     # new_strs = ['helo mi n4me i5 b0b the buildr']
     new_strs = []
