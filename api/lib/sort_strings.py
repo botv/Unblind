@@ -6,7 +6,7 @@ from autocorrect import spell
 #input should be in json format
 def sort_string(texts):
     top_3 = []
-
+    output = {}
     for text_ in texts["blocks"]:
         text = text_["text"]
         char_area = text_["height"] * text_["width"] / len(text_["text"])
@@ -18,7 +18,7 @@ def sort_string(texts):
     while count < 3 | count < len(sorted_output):
     	# print(sorted_output[count])
         top_3.append(sorted_output[count])
-    	count = count + 1
+        count = count + 1
 
     return top_3
     
