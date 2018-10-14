@@ -11,21 +11,21 @@ import FirebaseStorage
 
 struct StorageService {
     static func uploadImage(_ image: UIImage, completion: @escaping (String?) -> Void) {
+        let storage = Storage.storage()
+        let bucketPath = "gs://unblind-9a7cd.appspot.com/"
         let data = image.jpegData(compressionQuality: 0.1)!
         let timestamp = ISO8601DateFormatter().string(from: Date())
-        let storageRef = Storage.storage().reference().child("\(timestamp).jpg")
+        let storageRef = storage.reference().child("\(timestamp).jpg")
         let uploadTask = storageRef.putData(data, metadata: nil)
         
         uploadTask.observe(.success) { snapshot in
             print("uploaded image")
-            storageRef.downloadURL(completion: { (url, error) in
-                guard let url = url?.absoluteString else { return completion(nil) }
-                completion(url)
-            })
+            completion(bucketPath + storageRef.fullPath)
         }
         
         uploadTask.observe(.failure) { err in
             print(err)
+            completion(nil)
         }
     }
 }
