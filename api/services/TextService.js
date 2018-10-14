@@ -5,7 +5,8 @@ module.exports = class TextService {
 		let options = {
 			mode: 'text',
 			pythonOptions: ['-u'],
-			scriptPath: 'lib'
+			pythonPath: 'env/bin/python',
+			scriptPath: 'pylib'
 		};
 
 		PythonShell.run('cleanup_text.py', options, function (err, results) {
