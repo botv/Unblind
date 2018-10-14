@@ -22,7 +22,7 @@ def locational_summary(objects):
 		max_x = max(vertex_list, key=lambda t: t[0])[0]
 		min_y = min(vertex_list, key=lambda t: t[1])[1]
 		max_y = max(vertex_list, key=lambda t: t[1])[1]
-                vertex_list = []
+		vertex_list = []
 		center_x = (max_x + min_x) / 2
 		center_y = (max_y + min_y) / 2
 
