@@ -102,18 +102,13 @@ extension ViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
             let image = UIImage(data: imageData)
-            ImageService.getText(image: image!) { text in
-                if let text = text {
-                    print(text)
-                }
-                self.processing = false
-                self.spinner.stopAnimating()
-            }
             
             ImageService.getDescription(image: image!) { description in
                 if let description = description {
                     print(description)
                 }
+                self.processing = false
+                self.spinner.stopAnimating()
             }
         } else {
             self.processing = false
