@@ -36,7 +36,6 @@ struct TextService {
         Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseString() { response in
             switch response.result {
             case .success:
-                print(response.value!)
                 completion(response.value)
             case .failure(let error):
                 print(error)
