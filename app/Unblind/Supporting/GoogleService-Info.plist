@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>292768693517-e2vs4k8rdgf2p21pbvc79jd9q8ii02qv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.292768693517-e2vs4k8rdgf2p21pbvc79jd9q8ii02qv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBzH4pt3gTc6Moy3e1HV8PkB_1xbbHIIyA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>292768693517</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.benbotvinick.Unblind</string>
+	<key>PROJECT_ID</key>
+	<string>unblind-9a7cd</string>
+	<key>STORAGE_BUCKET</key>
+	<string>unblind-9a7cd.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:292768693517:ios:da717054a31d9649</string>
+	<key>DATABASE_URL</key>
+	<string>https://unblind-9a7cd.firebaseio.com</string>
+</dict>
+</plist>

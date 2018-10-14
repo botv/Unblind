@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F709921F217191F0004C3C82 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F709921E217191F0004C3C82 /* ImageService.swift */; };
-		F72A318A21718E1900E43DAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F72A318921718E1900E43DAD /* GoogleService-Info.plist */; };
 		F772B7A12171C2E5007D35A5 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772B7A02171C2E5007D35A5 /* SpeechService.swift */; };
 		F78406AD2172861900835DA9 /* TextService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78406AC2172861900835DA9 /* TextService.swift */; };
 		F7BFB17C21728F5800D41231 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BFB17B21728F5800D41231 /* StorageService.swift */; };
@@ -17,6 +16,7 @@
 		F7D387952171727400D7BFE5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D387932171727400D7BFE5 /* Main.storyboard */; };
 		F7D387972171727500D7BFE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7D387962171727500D7BFE5 /* Assets.xcassets */; };
 		F7D3879A2171727500D7BFE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7D387982171727500D7BFE5 /* LaunchScreen.storyboard */; };
+		F7E06E332172D65D00AEEBBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7E06E322172D65D00AEEBBD /* GoogleService-Info.plist */; };
 		FBF51E1AF42388713490CDB9 /* Pods_Unblind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D20942EBB585651EA74C5C40 /* Pods_Unblind.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,6 @@
 		AEF7F3002D3DFC73D2FE8F9A /* Pods-Unblind.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unblind.release.xcconfig"; path = "Pods/Target Support Files/Pods-Unblind/Pods-Unblind.release.xcconfig"; sourceTree = "<group>"; };
 		D20942EBB585651EA74C5C40 /* Pods_Unblind.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unblind.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F709921E217191F0004C3C82 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
-		F72A318921718E1900E43DAD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F772B7A02171C2E5007D35A5 /* SpeechService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechService.swift; sourceTree = "<group>"; };
 		F78406AC2172861900835DA9 /* TextService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextService.swift; sourceTree = "<group>"; };
 		F7BFB17B21728F5800D41231 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		F7D387962171727500D7BFE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7D387992171727500D7BFE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7D3879B2171727500D7BFE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7E06E322172D65D00AEEBBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,9 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				F7D3878F2171727400D7BFE5 /* AppDelegate.swift */,
+				F7E06E322172D65D00AEEBBD /* GoogleService-Info.plist */,
 				F7D387962171727500D7BFE5 /* Assets.xcassets */,
 				F7D3879B2171727500D7BFE5 /* Info.plist */,
-				F72A318921718E1900E43DAD /* GoogleService-Info.plist */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7D3879A2171727500D7BFE5 /* LaunchScreen.storyboard in Resources */,
-				F72A318A21718E1900E43DAD /* GoogleService-Info.plist in Resources */,
+				F7E06E332172D65D00AEEBBD /* GoogleService-Info.plist in Resources */,
 				F7D387972171727500D7BFE5 /* Assets.xcassets in Resources */,
 				F7D387952171727400D7BFE5 /* Main.storyboard in Resources */,
 			);

@@ -12,7 +12,6 @@ import Firebase
 
 class ViewController: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    @IBOutlet weak var imageView: UIImageView!
     
     var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice?

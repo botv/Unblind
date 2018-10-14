@@ -19,7 +19,6 @@ struct StorageService {
         let uploadTask = storageRef.putData(data, metadata: nil)
         
         uploadTask.observe(.success) { snapshot in
-            print("uploaded image")
             completion(bucketPath + storageRef.fullPath)
         }
         
