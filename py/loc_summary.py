@@ -90,7 +90,7 @@ def group(objects):
 # Returns a string with the correctly formatted objects
 def print_quantity(objects):
     formatted_str = ''
-    for k, v in objects.iteritems():
+    for k, v in objects.items():
         if v == 1:
             formatted_str += 'a ' + str(k) + ', '
         else:
