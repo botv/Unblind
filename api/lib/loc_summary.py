@@ -1,5 +1,6 @@
 from pprint import pprint
-
+import inflect
+p = inflect.engine()
 
 def locational_summary(objects):
 
@@ -63,13 +64,17 @@ def locational_summary(objects):
     final = ''
     for string in strings:
         final += string
-    #print(final)
+    print(final)
 
-    return final
+    return None
 
 
 def format_str(objects, location):
-    formatted_str = location + ', there is ' + print_quantity(group(objects))
+    print_objects, count = print_quantity(group(objects))
+    if count > 1:
+        formatted_str = location + ', there are ' + print_objects
+    else:
+        formatted_str = location + ', there is ' + print_objects
 
     return formatted_str
 
@@ -90,12 +95,14 @@ def group(objects):
 # Returns a string with the correctly formatted objects
 def print_quantity(objects):
     formatted_str = ''
+    count = 0
     for k, v in objects.items():
+        count += 1
         if v == 1:
             formatted_str += 'a ' + str(k) + ', '
         else:
-            formatted_str += str(v) + ' ' + str(k) + ', '
+            formatted_str += str(v) + ' ' + p.plural(str(k)) + ', '
         # print(str(v), str(k))
-    return formatted_str
+    return formatted_str, count
 
 
