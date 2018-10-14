@@ -63,9 +63,9 @@ def locational_summary(objects):
     final = ''
     for string in strings:
         final += string
-    print(final)
+    #print(final)
 
-    return None
+    return final
 
 
 def format_str(objects, location):
